@@ -19,6 +19,7 @@ namespace WindowsFormsApplication1
     
     public partial class Form1 : Form
     {
+        // Fields to track the selected measurement, patient and device
         Measurement CurrentMeasurement;
         Patient CurrentPatient;
         Device CurrentDevice;
@@ -28,55 +29,78 @@ namespace WindowsFormsApplication1
             InitializeComponent();
         }
 
+        // When btnSearchPatient is clicked, search patient
         private void btnSearchPatient_Click(object sender, EventArgs e)
         {
+            // Edit status text
             searchStatus.Text = "Searching...";
+            
+            // Set FHIR endpoint and create client
             var endpoint = new Uri("http://spark-dstu2.furore.com/fhir");
             var client = new FhirClient(endpoint);
 
+            // Search endpoint with a family name, input from searchFamName
             var query = new string[] { "family=" + searchFamName.Text };
             Bundle result = client.Search<Patient>(query);
 
+            // Edit status text
             searchStatus.Text = "Got " + result.Entry.Count() + " records!";
+            
+            // Clear results labels
             label1.Text = "";
             label2.Text = "";
+
+            // For every patient in the result, add name and ID to a label
             foreach (var entry in result.Entry)
             {
                 Patient p = (Patient)entry.Resource;
-                var patientFirst = p.Name.First().Text;
-                var patientLast = p.Name.Last().Text;
-
                 label1.Text = label1.Text + p.Id + "\r\n";
                 label2.Text = label2.Text + p.BirthDate + "\r\n";
             }
         }
 
+        // When button 2 is clikced, create patient
         private void button2_Click(object sender, EventArgs e)
         {
+            // Edit status text
             createPatientStatus.Text = "Creating...";
+
+            // Set FHIR endpoint and create client
             var endpoint = new Uri("http://spark-dstu2.furore.com/fhir");
             var client = new FhirClient(endpoint);
 
+            // Create new patient birthdate and name
             var pat = new Patient() {BirthDate = birthDate.Text, Name= new List<HumanName>()};
             pat.Name.Add(HumanName.ForFamily(lastName.Text).WithGiven(givenName.Text));
+
+            // Upload to server
             client.Create(pat);
             createPatientStatus.Text = "Created!";
 
         }
 
+        // When button 1 is clicked, select patient
         private void button1_Click_1(object sender, EventArgs e)
         {
+            // Edit status text
             patientSelectStatus.Text = "Selecting...";
+
+            // Set FHIR endpoint and create client
             var endpoint = new Uri("http://spark-dstu2.furore.com/fhir");
             var client = new FhirClient(endpoint);
 
+            // Search patient based on ID from user input
             var query = new string[] { "_id=" + selectPatientSearchText.Text.Trim() };
             Bundle result = client.Search<Patient>(query);
 
+            // Set the current patient
             CurrentPatient = ((Patient)result.Entry.FirstOrDefault().Resource);
 
+            // Edit selected patient text
             patID.Text = CurrentPatient.Id;
             patBirthday.Text = CurrentPatient.BirthDate;
+            
+            // Edit status text
             patientSelectStatus.Text = "Done!";
 
         }
@@ -91,22 +115,29 @@ namespace WindowsFormsApplication1
 
         }
 
+        // When button1 is clicked, retrieve measurements
         private void button1_Click(object sender, EventArgs e)
         {
             searchObsStatus.Text = "Retrieving...";
+
+            // Connect to RESTful server
             var client = new HttpClient();
             client.BaseAddress = new Uri("http://www.med-it.nl:3000");
+
             client.DefaultRequestHeaders.Accept.Add(
-            new MediaTypeWithQualityHeaderValue("application/json"));
-            String measurementDate = searchObsDate.Text.Replace("-", "");
+            new MediaTypeWithQualityHeaderValue("application/json")); // Set output to json
+            String measurementDate = searchObsDate.Text.Replace("-", ""); // Clean up date string
+
+            // Get response
             HttpResponseMessage response = client.GetAsync("/api/measurements/" + measurementDate).Result; 
             
+            // If response is successful, select measurement
             if (response.IsSuccessStatusCode)
             {
                 var data = response.Content.ReadAsStringAsync().Result;
                 JavaScriptSerializer ser = new JavaScriptSerializer();
-                var a = ser.Deserialize<List<Measurement>>(data);
-                CurrentMeasurement = a[0];
+                var measurement = ser.Deserialize<List<Measurement>>(data);
+                CurrentMeasurement = measurement[0];
                 obsActiveTime.Text = CurrentMeasurement.m_active_time.ToString();
                 obsAge.Text = CurrentMeasurement.age.ToString();
                 obsAsleepTime.Text = CurrentMeasurement.s_asleep_time.ToString();
@@ -135,10 +166,14 @@ namespace WindowsFormsApplication1
             }
             else
             {
+                // If not successful, send error code to label
                 searchObsStatus.Text = "Error: " + response.StatusCode;
             }
         }
 
+        /*
+         * Class for measurement received from server
+         * */
         class Measurement
         {
             public String date { get; set; }
@@ -202,6 +237,7 @@ namespace WindowsFormsApplication1
             patientSelectStatus.Text = "Ready!";
         }
 
+        // Select a device
         private void btnDeviceSelect_Click(object sender, EventArgs e)
         {
             deviceSelectStatus.Text = "Selecting...";
@@ -219,6 +255,7 @@ namespace WindowsFormsApplication1
             deviceSelectStatus.Text = "Done!";
         }
 
+        // Create a device
         private void btnDeviceCreate_Click(object sender, EventArgs e)
         {
             createDeviceStatus.Text = "Creating...";
@@ -232,6 +269,7 @@ namespace WindowsFormsApplication1
             createDeviceStatus.Text = "Done!";
         }
 
+        // Search for a device
         private void btnDeviceSearch_Click(object sender, EventArgs e)
         {
             searchDeviceStatus.Text = "Searching...";
