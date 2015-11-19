@@ -293,9 +293,107 @@ namespace WindowsFormsApplication1
                 deviceRes2.Text = deviceRes2.Text + d.Manufacturer + "\r\n";
                 deviceRes3.Text = deviceRes3.Text + d.Model + "\r\n";
             }
-
-            searchDeviceStatus.Text = "Done!";
         }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            var endpoint = new Uri("http://spark-dstu2.furore.com/fhir");
+            var client = new FhirClient(endpoint);
+
+            // Create new value for observation
+            SampledData val = new SampledData();
+            CodeableConcept concept = new CodeableConcept();
+            concept.Coding = new List<Coding>();
+
+            if (conversionList.Text.Equals("age")) 
+            {
+                val.Data = CurrentMeasurement.age.ToString();
+                Coding code = new Coding();
+                code.Code = "410668003";
+                concept.Coding.Add(code);
+            }
+            else if (conversionList.Text.Equals("bmr")) 
+            {
+                val.Data = CurrentMeasurement.bmr.ToString();
+                Coding code = new Coding();
+                code.Code = "60621009";
+                concept.Coding.Add(code);
+            }
+            else if (conversionList.Text.Equals("height")) 
+            {
+                val.Data = CurrentMeasurement.height.ToString();
+                Coding code = new Coding();
+                code.Code = "60621009";
+                concept.Coding.Add(code);
+            }
+            else if (conversionList.Text.Equals("m_active_time")) val.Data = CurrentMeasurement.m_active_time.ToString();
+            else if (conversionList.Text.Equals("m_calories")) val.Data = CurrentMeasurement.m_calories.ToString();
+            else if (conversionList.Text.Equals("m_distance")) val.Data = CurrentMeasurement.m_distance.ToString();
+            else if (conversionList.Text.Equals("m_inactive_time")) val.Data = CurrentMeasurement.m_inactive_time.ToString();
+            else if (conversionList.Text.Equals("m_lcat")) val.Data = CurrentMeasurement.m_lcat.ToString();
+            else if (conversionList.Text.Equals("m_lcit")) val.Data = CurrentMeasurement.m_lcit.ToString();
+            else if (conversionList.Text.Equals("m_steps")) val.Data = CurrentMeasurement.m_steps.ToString();
+            else if (conversionList.Text.Equals("m_total_calories")) val.Data = CurrentMeasurement.m_total_calories.ToString();
+            else if (conversionList.Text.Equals("s_asleep_time")) val.Data = CurrentMeasurement.s_asleep_time.ToString();
+            else if (conversionList.Text.Equals("s_awake")) val.Data = CurrentMeasurement.s_awake.ToString();
+            else if (conversionList.Text.Equals("s_awake_time")) val.Data = CurrentMeasurement.s_awake_time.ToString();
+            else if (conversionList.Text.Equals("s_awakenings")) val.Data = CurrentMeasurement.s_awakenings.ToString();
+            else if (conversionList.Text.Equals("s_bedtime")) val.Data = CurrentMeasurement.s_bedtime.ToString();
+            else if (conversionList.Text.Equals("s_clinical_deep")) val.Data = CurrentMeasurement.s_clinical_deep.ToString();
+            else if (conversionList.Text.Equals("s_count")) val.Data = CurrentMeasurement.s_count.ToString();
+            else if (conversionList.Text.Equals("s_duration")) val.Data = CurrentMeasurement.s_duration.ToString();
+            else if (conversionList.Text.Equals("s_light")) val.Data = CurrentMeasurement.s_light.ToString();
+            else if (conversionList.Text.Equals("s_quality")) val.Data = CurrentMeasurement.s_quality.ToString();
+            else if (conversionList.Text.Equals("s_rem")) val.Data = CurrentMeasurement.s_rem.ToString();
+            else if (conversionList.Text.Equals("weight")) val.Data = CurrentMeasurement.weight.ToString();
+            else val.Data = "E"; // Error
+            
+
+            Console.WriteLine("Value data: " + val.Data);
+
+            ResourceReference dev = new ResourceReference();
+            dev.Reference = CurrentDevice.ToString();
+
+            ResourceReference pat = new ResourceReference();
+            pat.Reference = CurrentPatient.ToString();
+
+            Console.WriteLine("Patient reference: " + pat.Reference);
+
+            Console.WriteLine("Conversion: " + conversionList.Text);
+
+            DateTime date = DateTime.ParseExact(CurrentMeasurement.date, "yyyymmdd", null);
+            Console.WriteLine("" + date.ToString());
+            var obs = new Observation() {Device = dev, Subject = pat, Value = val, Issued = date,  Category = concept, Status = Observation.ObservationStatus.Final};
+            client.Create(obs);
+
+            conversionStatus.Text = "Done!";
+        }
+
+        private void obsSearchButton_Click(object sender, EventArgs e)
+        {
+            obsSearchStatus.Text = "Searching...";
+
+            var endpoint = new Uri("http://spark-dstu2.furore.com/fhir");
+            var client = new FhirClient(endpoint);
+
+            var query = new string[] { "issued=" + obsSearchDate.Text };
+            Bundle result = client.Search<Observation>(query);
+
+            obsSearchStatus.Text = "Got " + result.Entry.Count() + " records!";
+
+            obsFinderId.Text = "";
+            obsFinderValue.Text = "";
+
+            foreach (var entry in result.Entry)
+            {
+                Observation obs = (Observation)entry.Resource;
+
+                obsFinderId.Text = obsFinderId.Text + obs.Id + "\r\n";
+                obsFinderValue.Text = obsFinderValue.Text + obs.Value.ToString() + "\r\n";
+            }
+        }
+
+
 
     }
 }

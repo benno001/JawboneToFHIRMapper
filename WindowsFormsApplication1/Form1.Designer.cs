@@ -30,6 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.deviceModel = new System.Windows.Forms.Label();
+            this.deviceModelLabel = new System.Windows.Forms.Label();
+            this.deviceManufacturer = new System.Windows.Forms.Label();
+            this.deviceID = new System.Windows.Forms.Label();
+            this.label58 = new System.Windows.Forms.Label();
+            this.deviceManufacturerLabel = new System.Windows.Forms.Label();
+            this.patBirthday = new System.Windows.Forms.Label();
+            this.patID = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
             this.obsWeight = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
@@ -79,48 +91,13 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label41 = new System.Windows.Forms.Label();
-            this.label42 = new System.Windows.Forms.Label();
-            this.label43 = new System.Windows.Forms.Label();
-            this.patID = new System.Windows.Forms.Label();
-            this.patBirthday = new System.Windows.Forms.Label();
             this.tabMeasurement = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.searchObsDate = new System.Windows.Forms.DateTimePicker();
-            this.label12 = new System.Windows.Forms.Label();
-            this.btnRetrieveObs = new System.Windows.Forms.Button();
-            this.label13 = new System.Windows.Forms.Label();
             this.searchObsStatus = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.btnRetrieveObs = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
             this.tabDevice = new System.Windows.Forms.TabPage();
-            this.tabPatient = new System.Windows.Forms.TabPage();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnSelectPatient = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
-            this.selectPatientSearchText = new System.Windows.Forms.TextBox();
-            this.label39 = new System.Windows.Forms.Label();
-            this.label44 = new System.Windows.Forms.Label();
-            this.patientSelectStatus = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.birthDate = new System.Windows.Forms.DateTimePicker();
-            this.btnSearchPatient = new System.Windows.Forms.Button();
-            this.lastName = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.searchFamName = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.givenName = new System.Windows.Forms.TextBox();
-            this.btnCreatePatient = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.searchStatus = new System.Windows.Forms.Label();
-            this.createPatientStatus = new System.Windows.Forms.Label();
-            this.tabControl = new System.Windows.Forms.TabControl();
-            this.tabMapping = new System.Windows.Forms.TabPage();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.createDeviceStatus = new System.Windows.Forms.Label();
             this.searchDeviceStatus = new System.Windows.Forms.Label();
@@ -134,6 +111,8 @@
             this.label51 = new System.Windows.Forms.Label();
             this.createDeviceModel = new System.Windows.Forms.TextBox();
             this.btnDeviceSearch = new System.Windows.Forms.Button();
+            this.resDeviceModel = new System.Windows.Forms.Label();
+            this.deviceRes3 = new System.Windows.Forms.Label();
             this.deviceSelectStatus = new System.Windows.Forms.Label();
             this.resDeviceManufacturer = new System.Windows.Forms.Label();
             this.label55 = new System.Windows.Forms.Label();
@@ -144,14 +123,52 @@
             this.deviceRes1 = new System.Windows.Forms.Label();
             this.deviceRes2 = new System.Windows.Forms.Label();
             this.resDeviceID = new System.Windows.Forms.Label();
-            this.deviceManufacturer = new System.Windows.Forms.Label();
-            this.deviceID = new System.Windows.Forms.Label();
-            this.label58 = new System.Windows.Forms.Label();
-            this.deviceManufacturerLabel = new System.Windows.Forms.Label();
-            this.resDeviceModel = new System.Windows.Forms.Label();
-            this.deviceRes3 = new System.Windows.Forms.Label();
-            this.deviceModel = new System.Windows.Forms.Label();
-            this.deviceModelLabel = new System.Windows.Forms.Label();
+            this.tabPatient = new System.Windows.Forms.TabPage();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.createPatientStatus = new System.Windows.Forms.Label();
+            this.searchStatus = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnCreatePatient = new System.Windows.Forms.Button();
+            this.givenName = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.searchFamName = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lastName = new System.Windows.Forms.TextBox();
+            this.btnSearchPatient = new System.Windows.Forms.Button();
+            this.birthDate = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
+            this.patientSelectStatus = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.selectPatientSearchText = new System.Windows.Forms.TextBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.btnSelectPatient = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.tabControl = new System.Windows.Forms.TabControl();
+            this.tabMapping = new System.Windows.Forms.TabPage();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.conversionList = new System.Windows.Forms.ListBox();
+            this.conversionStatus = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.convertButton = new System.Windows.Forms.Button();
+            this.tabObs = new System.Windows.Forms.TabPage();
+            this.splitContainer4 = new System.Windows.Forms.SplitContainer();
+            this.obsSearchStatus = new System.Windows.Forms.Label();
+            this.label59 = new System.Windows.Forms.Label();
+            this.label61 = new System.Windows.Forms.Label();
+            this.obsSearchButton = new System.Windows.Forms.Button();
+            this.label65 = new System.Windows.Forms.Label();
+            this.label68 = new System.Windows.Forms.Label();
+            this.obsFinderId = new System.Windows.Forms.Label();
+            this.obsFinderValue = new System.Windows.Forms.Label();
+            this.label71 = new System.Windows.Forms.Label();
+            this.searchObsDate = new System.Windows.Forms.DateTimePicker();
+            this.obsSearchDate = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -159,21 +176,28 @@
             this.tabMeasurement.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabDevice.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
+            this.splitContainer3.Panel1.SuspendLayout();
+            this.splitContainer3.Panel2.SuspendLayout();
+            this.splitContainer3.SuspendLayout();
             this.tabPatient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             this.tabControl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
-            this.splitContainer3.Panel1.SuspendLayout();
-            this.splitContainer3.Panel2.SuspendLayout();
-            this.splitContainer3.SuspendLayout();
+            this.tabMapping.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.tabObs.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).BeginInit();
+            this.splitContainer4.Panel1.SuspendLayout();
+            this.splitContainer4.Panel2.SuspendLayout();
+            this.splitContainer4.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
             // 
-            this.splitContainer1.Location = new System.Drawing.Point(650, 23);
+            this.splitContainer1.Location = new System.Drawing.Point(462, 23);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -249,6 +273,116 @@
             this.splitContainer1.Size = new System.Drawing.Size(436, 389);
             this.splitContainer1.SplitterDistance = 208;
             this.splitContainer1.TabIndex = 6;
+            // 
+            // deviceModel
+            // 
+            this.deviceModel.AutoSize = true;
+            this.deviceModel.Location = new System.Drawing.Point(79, 163);
+            this.deviceModel.Name = "deviceModel";
+            this.deviceModel.Size = new System.Drawing.Size(10, 13);
+            this.deviceModel.TabIndex = 74;
+            this.deviceModel.Text = "-";
+            // 
+            // deviceModelLabel
+            // 
+            this.deviceModelLabel.AutoSize = true;
+            this.deviceModelLabel.Location = new System.Drawing.Point(3, 164);
+            this.deviceModelLabel.Name = "deviceModelLabel";
+            this.deviceModelLabel.Size = new System.Drawing.Size(36, 13);
+            this.deviceModelLabel.TabIndex = 73;
+            this.deviceModelLabel.Text = "Model";
+            // 
+            // deviceManufacturer
+            // 
+            this.deviceManufacturer.AutoSize = true;
+            this.deviceManufacturer.Location = new System.Drawing.Point(79, 150);
+            this.deviceManufacturer.Name = "deviceManufacturer";
+            this.deviceManufacturer.Size = new System.Drawing.Size(10, 13);
+            this.deviceManufacturer.TabIndex = 72;
+            this.deviceManufacturer.Text = "-";
+            // 
+            // deviceID
+            // 
+            this.deviceID.AutoSize = true;
+            this.deviceID.Location = new System.Drawing.Point(79, 131);
+            this.deviceID.Name = "deviceID";
+            this.deviceID.Size = new System.Drawing.Size(10, 13);
+            this.deviceID.TabIndex = 71;
+            this.deviceID.Text = "-";
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Location = new System.Drawing.Point(3, 131);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(18, 13);
+            this.label58.TabIndex = 70;
+            this.label58.Text = "ID";
+            // 
+            // deviceManufacturerLabel
+            // 
+            this.deviceManufacturerLabel.AutoSize = true;
+            this.deviceManufacturerLabel.Location = new System.Drawing.Point(3, 150);
+            this.deviceManufacturerLabel.Name = "deviceManufacturerLabel";
+            this.deviceManufacturerLabel.Size = new System.Drawing.Size(70, 13);
+            this.deviceManufacturerLabel.TabIndex = 69;
+            this.deviceManufacturerLabel.Text = "Manufacturer";
+            // 
+            // patBirthday
+            // 
+            this.patBirthday.AutoSize = true;
+            this.patBirthday.Location = new System.Drawing.Point(68, 57);
+            this.patBirthday.Name = "patBirthday";
+            this.patBirthday.Size = new System.Drawing.Size(10, 13);
+            this.patBirthday.TabIndex = 68;
+            this.patBirthday.Text = "-";
+            // 
+            // patID
+            // 
+            this.patID.AutoSize = true;
+            this.patID.Location = new System.Drawing.Point(68, 38);
+            this.patID.Name = "patID";
+            this.patID.Size = new System.Drawing.Size(10, 13);
+            this.patID.TabIndex = 67;
+            this.patID.Text = "-";
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.label43.Location = new System.Drawing.Point(3, 105);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(111, 18);
+            this.label43.TabIndex = 66;
+            this.label43.Text = "Selected device";
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(3, 38);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(18, 13);
+            this.label42.TabIndex = 19;
+            this.label42.Text = "ID";
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.label41.Location = new System.Drawing.Point(3, 19);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(112, 18);
+            this.label41.TabIndex = 65;
+            this.label41.Text = "Selected patient";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(3, 57);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(34, 13);
+            this.label11.TabIndex = 15;
+            this.label11.Text = "B-day";
             // 
             // label38
             // 
@@ -692,69 +826,13 @@
             this.label14.TabIndex = 16;
             this.label14.Text = "Age";
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(3, 57);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(34, 13);
-            this.label11.TabIndex = 15;
-            this.label11.Text = "B-day";
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.label41.Location = new System.Drawing.Point(3, 19);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(112, 18);
-            this.label41.TabIndex = 65;
-            this.label41.Text = "Selected patient";
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(3, 38);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(18, 13);
-            this.label42.TabIndex = 19;
-            this.label42.Text = "ID";
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.label43.Location = new System.Drawing.Point(3, 105);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(111, 18);
-            this.label43.TabIndex = 66;
-            this.label43.Text = "Selected device";
-            // 
-            // patID
-            // 
-            this.patID.AutoSize = true;
-            this.patID.Location = new System.Drawing.Point(68, 38);
-            this.patID.Name = "patID";
-            this.patID.Size = new System.Drawing.Size(10, 13);
-            this.patID.TabIndex = 67;
-            this.patID.Text = "-";
-            // 
-            // patBirthday
-            // 
-            this.patBirthday.AutoSize = true;
-            this.patBirthday.Location = new System.Drawing.Point(68, 57);
-            this.patBirthday.Name = "patBirthday";
-            this.patBirthday.Size = new System.Drawing.Size(10, 13);
-            this.patBirthday.TabIndex = 68;
-            this.patBirthday.Text = "-";
-            // 
             // tabMeasurement
             // 
             this.tabMeasurement.Controls.Add(this.panel1);
             this.tabMeasurement.Location = new System.Drawing.Point(4, 22);
             this.tabMeasurement.Name = "tabMeasurement";
             this.tabMeasurement.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMeasurement.Size = new System.Drawing.Size(421, 278);
+            this.tabMeasurement.Size = new System.Drawing.Size(421, 317);
             this.tabMeasurement.TabIndex = 0;
             this.tabMeasurement.Text = "Measurement";
             this.tabMeasurement.UseVisualStyleBackColor = true;
@@ -770,40 +848,17 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(415, 272);
+            this.panel1.Size = new System.Drawing.Size(415, 311);
             this.panel1.TabIndex = 0;
             // 
-            // searchObsDate
+            // searchObsStatus
             // 
-            this.searchObsDate.CustomFormat = "yyyy-MM-dd";
-            this.searchObsDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.searchObsDate.Location = new System.Drawing.Point(39, 42);
-            this.searchObsDate.MaxDate = new System.DateTime(2015, 12, 31, 0, 0, 0, 0);
-            this.searchObsDate.MinDate = new System.DateTime(2015, 1, 1, 0, 0, 0, 0);
-            this.searchObsDate.Name = "searchObsDate";
-            this.searchObsDate.Size = new System.Drawing.Size(109, 20);
-            this.searchObsDate.TabIndex = 10;
-            this.searchObsDate.Value = new System.DateTime(2015, 1, 1, 0, 0, 0, 0);
-            this.searchObsDate.ValueChanged += new System.EventHandler(this.searchObsDate_ValueChanged);
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(3, 44);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(30, 13);
-            this.label12.TabIndex = 11;
-            this.label12.Text = "Date";
-            // 
-            // btnRetrieveObs
-            // 
-            this.btnRetrieveObs.Location = new System.Drawing.Point(6, 68);
-            this.btnRetrieveObs.Name = "btnRetrieveObs";
-            this.btnRetrieveObs.Size = new System.Drawing.Size(114, 23);
-            this.btnRetrieveObs.TabIndex = 6;
-            this.btnRetrieveObs.Text = "Retrieve and select";
-            this.btnRetrieveObs.UseVisualStyleBackColor = true;
-            this.btnRetrieveObs.Click += new System.EventHandler(this.button1_Click);
+            this.searchObsStatus.AutoSize = true;
+            this.searchObsStatus.Location = new System.Drawing.Point(126, 73);
+            this.searchObsStatus.Name = "searchObsStatus";
+            this.searchObsStatus.Size = new System.Drawing.Size(45, 13);
+            this.searchObsStatus.TabIndex = 15;
+            this.searchObsStatus.Text = "Inactive";
             // 
             // label13
             // 
@@ -815,14 +870,24 @@
             this.label13.TabIndex = 15;
             this.label13.Text = "Measurement selector";
             // 
-            // searchObsStatus
+            // btnRetrieveObs
             // 
-            this.searchObsStatus.AutoSize = true;
-            this.searchObsStatus.Location = new System.Drawing.Point(126, 73);
-            this.searchObsStatus.Name = "searchObsStatus";
-            this.searchObsStatus.Size = new System.Drawing.Size(45, 13);
-            this.searchObsStatus.TabIndex = 15;
-            this.searchObsStatus.Text = "Inactive";
+            this.btnRetrieveObs.Location = new System.Drawing.Point(6, 68);
+            this.btnRetrieveObs.Name = "btnRetrieveObs";
+            this.btnRetrieveObs.Size = new System.Drawing.Size(114, 23);
+            this.btnRetrieveObs.TabIndex = 6;
+            this.btnRetrieveObs.Text = "Retrieve and select";
+            this.btnRetrieveObs.UseVisualStyleBackColor = true;
+            this.btnRetrieveObs.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(3, 44);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(30, 13);
+            this.label12.TabIndex = 11;
+            this.label12.Text = "Date";
             // 
             // tabDevice
             // 
@@ -830,313 +895,10 @@
             this.tabDevice.Location = new System.Drawing.Point(4, 22);
             this.tabDevice.Name = "tabDevice";
             this.tabDevice.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDevice.Size = new System.Drawing.Size(421, 278);
+            this.tabDevice.Size = new System.Drawing.Size(421, 317);
             this.tabDevice.TabIndex = 2;
             this.tabDevice.Text = "Device";
             this.tabDevice.UseVisualStyleBackColor = true;
-            // 
-            // tabPatient
-            // 
-            this.tabPatient.Controls.Add(this.splitContainer2);
-            this.tabPatient.Location = new System.Drawing.Point(4, 22);
-            this.tabPatient.Name = "tabPatient";
-            this.tabPatient.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPatient.Size = new System.Drawing.Size(421, 278);
-            this.tabPatient.TabIndex = 1;
-            this.tabPatient.Text = "Patient";
-            this.tabPatient.UseVisualStyleBackColor = true;
-            // 
-            // splitContainer2
-            // 
-            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer2.Location = new System.Drawing.Point(3, 3);
-            this.splitContainer2.Name = "splitContainer2";
-            // 
-            // splitContainer2.Panel1
-            // 
-            this.splitContainer2.Panel1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.splitContainer2.Panel1.Controls.Add(this.createPatientStatus);
-            this.splitContainer2.Panel1.Controls.Add(this.searchStatus);
-            this.splitContainer2.Panel1.Controls.Add(this.label7);
-            this.splitContainer2.Panel1.Controls.Add(this.label4);
-            this.splitContainer2.Panel1.Controls.Add(this.btnCreatePatient);
-            this.splitContainer2.Panel1.Controls.Add(this.givenName);
-            this.splitContainer2.Panel1.Controls.Add(this.label8);
-            this.splitContainer2.Panel1.Controls.Add(this.searchFamName);
-            this.splitContainer2.Panel1.Controls.Add(this.label5);
-            this.splitContainer2.Panel1.Controls.Add(this.label3);
-            this.splitContainer2.Panel1.Controls.Add(this.lastName);
-            this.splitContainer2.Panel1.Controls.Add(this.btnSearchPatient);
-            this.splitContainer2.Panel1.Controls.Add(this.birthDate);
-            this.splitContainer2.Panel1.Controls.Add(this.label6);
-            this.splitContainer2.Panel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.splitContainer2.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer2_Panel1_Paint);
-            // 
-            // splitContainer2.Panel2
-            // 
-            this.splitContainer2.Panel2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.splitContainer2.Panel2.Controls.Add(this.patientSelectStatus);
-            this.splitContainer2.Panel2.Controls.Add(this.label44);
-            this.splitContainer2.Panel2.Controls.Add(this.label39);
-            this.splitContainer2.Panel2.Controls.Add(this.selectPatientSearchText);
-            this.splitContainer2.Panel2.Controls.Add(this.label40);
-            this.splitContainer2.Panel2.Controls.Add(this.label9);
-            this.splitContainer2.Panel2.Controls.Add(this.btnSelectPatient);
-            this.splitContainer2.Panel2.Controls.Add(this.label1);
-            this.splitContainer2.Panel2.Controls.Add(this.label2);
-            this.splitContainer2.Panel2.Controls.Add(this.label10);
-            this.splitContainer2.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.splitContainer2.Size = new System.Drawing.Size(415, 272);
-            this.splitContainer2.SplitterDistance = 213;
-            this.splitContainer2.TabIndex = 7;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(3, 38);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(18, 13);
-            this.label10.TabIndex = 14;
-            this.label10.Text = "ID";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(128, 66);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "No results";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 66);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "No results";
-            // 
-            // btnSelectPatient
-            // 
-            this.btnSelectPatient.Location = new System.Drawing.Point(6, 228);
-            this.btnSelectPatient.Name = "btnSelectPatient";
-            this.btnSelectPatient.Size = new System.Drawing.Size(110, 23);
-            this.btnSelectPatient.TabIndex = 15;
-            this.btnSelectPatient.Text = "Select patient";
-            this.btnSelectPatient.UseVisualStyleBackColor = true;
-            this.btnSelectPatient.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.label9.Location = new System.Drawing.Point(3, 19);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(101, 18);
-            this.label9.TabIndex = 13;
-            this.label9.Text = "Patient results";
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(4, 205);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(18, 13);
-            this.label40.TabIndex = 17;
-            this.label40.Text = "ID";
-            // 
-            // selectPatientSearchText
-            // 
-            this.selectPatientSearchText.Location = new System.Drawing.Point(27, 202);
-            this.selectPatientSearchText.Name = "selectPatientSearchText";
-            this.selectPatientSearchText.Size = new System.Drawing.Size(135, 20);
-            this.selectPatientSearchText.TabIndex = 16;
-            this.selectPatientSearchText.Text = "spark499";
-            this.selectPatientSearchText.TextChanged += new System.EventHandler(this.selectPatientSearchText_TextChanged);
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.label39.Location = new System.Drawing.Point(3, 171);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(96, 18);
-            this.label39.TabIndex = 18;
-            this.label39.Text = "Patient select";
-            // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(128, 38);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(34, 13);
-            this.label44.TabIndex = 67;
-            this.label44.Text = "B-day";
-            // 
-            // patientSelectStatus
-            // 
-            this.patientSelectStatus.AutoSize = true;
-            this.patientSelectStatus.Location = new System.Drawing.Point(122, 233);
-            this.patientSelectStatus.Name = "patientSelectStatus";
-            this.patientSelectStatus.Size = new System.Drawing.Size(45, 13);
-            this.patientSelectStatus.TabIndex = 15;
-            this.patientSelectStatus.Text = "Inactive";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 211);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 13);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "Birth date";
-            // 
-            // birthDate
-            // 
-            this.birthDate.CustomFormat = "yyyy-MM-dd";
-            this.birthDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.birthDate.Location = new System.Drawing.Point(64, 205);
-            this.birthDate.MaxDate = new System.DateTime(2015, 12, 31, 0, 0, 0, 0);
-            this.birthDate.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
-            this.birthDate.Name = "birthDate";
-            this.birthDate.Size = new System.Drawing.Size(135, 20);
-            this.birthDate.TabIndex = 8;
-            this.birthDate.Value = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
-            this.birthDate.ValueChanged += new System.EventHandler(this.birthDate_ValueChanged);
-            // 
-            // btnSearchPatient
-            // 
-            this.btnSearchPatient.Location = new System.Drawing.Point(6, 76);
-            this.btnSearchPatient.Name = "btnSearchPatient";
-            this.btnSearchPatient.Size = new System.Drawing.Size(110, 23);
-            this.btnSearchPatient.TabIndex = 0;
-            this.btnSearchPatient.Text = "Search patient";
-            this.btnSearchPatient.UseVisualStyleBackColor = true;
-            this.btnSearchPatient.Click += new System.EventHandler(this.btnSearchPatient_Click);
-            // 
-            // lastName
-            // 
-            this.lastName.Location = new System.Drawing.Point(64, 179);
-            this.lastName.Name = "lastName";
-            this.lastName.Size = new System.Drawing.Size(135, 20);
-            this.lastName.TabIndex = 7;
-            this.lastName.Text = "Wildfhir";
-            this.lastName.TextChanged += new System.EventHandler(this.lastName_TextChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(4, 53);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Last name";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 182);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 13);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Last name";
-            // 
-            // searchFamName
-            // 
-            this.searchFamName.Location = new System.Drawing.Point(64, 50);
-            this.searchFamName.Name = "searchFamName";
-            this.searchFamName.Size = new System.Drawing.Size(135, 20);
-            this.searchFamName.TabIndex = 4;
-            this.searchFamName.Text = "Wildfhir";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.label8.Location = new System.Drawing.Point(3, 19);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(102, 18);
-            this.label8.TabIndex = 12;
-            this.label8.Text = "Patient search";
-            // 
-            // givenName
-            // 
-            this.givenName.Location = new System.Drawing.Point(64, 153);
-            this.givenName.Name = "givenName";
-            this.givenName.Size = new System.Drawing.Size(136, 20);
-            this.givenName.TabIndex = 5;
-            this.givenName.Text = "Unintentional";
-            this.givenName.TextChanged += new System.EventHandler(this.givenName_TextChanged);
-            // 
-            // btnCreatePatient
-            // 
-            this.btnCreatePatient.Location = new System.Drawing.Point(6, 231);
-            this.btnCreatePatient.Name = "btnCreatePatient";
-            this.btnCreatePatient.Size = new System.Drawing.Size(110, 23);
-            this.btnCreatePatient.TabIndex = 3;
-            this.btnCreatePatient.Text = "Create patient";
-            this.btnCreatePatient.UseVisualStyleBackColor = true;
-            this.btnCreatePatient.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(4, 156);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 13);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "First name";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.label7.Location = new System.Drawing.Point(3, 128);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(104, 18);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "Patient creator";
-            // 
-            // searchStatus
-            // 
-            this.searchStatus.AutoSize = true;
-            this.searchStatus.Location = new System.Drawing.Point(122, 81);
-            this.searchStatus.Name = "searchStatus";
-            this.searchStatus.Size = new System.Drawing.Size(45, 13);
-            this.searchStatus.TabIndex = 13;
-            this.searchStatus.Text = "Inactive";
-            // 
-            // createPatientStatus
-            // 
-            this.createPatientStatus.AutoSize = true;
-            this.createPatientStatus.Location = new System.Drawing.Point(122, 236);
-            this.createPatientStatus.Name = "createPatientStatus";
-            this.createPatientStatus.Size = new System.Drawing.Size(45, 13);
-            this.createPatientStatus.TabIndex = 14;
-            this.createPatientStatus.Text = "Inactive";
-            // 
-            // tabControl
-            // 
-            this.tabControl.Controls.Add(this.tabPatient);
-            this.tabControl.Controls.Add(this.tabDevice);
-            this.tabControl.Controls.Add(this.tabMeasurement);
-            this.tabControl.Controls.Add(this.tabMapping);
-            this.tabControl.Location = new System.Drawing.Point(12, 1);
-            this.tabControl.Name = "tabControl";
-            this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(429, 304);
-            this.tabControl.TabIndex = 8;
-            // 
-            // tabMapping
-            // 
-            this.tabMapping.Location = new System.Drawing.Point(4, 22);
-            this.tabMapping.Name = "tabMapping";
-            this.tabMapping.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMapping.Size = new System.Drawing.Size(421, 278);
-            this.tabMapping.TabIndex = 3;
-            this.tabMapping.Text = "Mapping and Conversion";
-            this.tabMapping.UseVisualStyleBackColor = true;
             // 
             // splitContainer3
             // 
@@ -1178,7 +940,7 @@
             this.splitContainer3.Panel2.Controls.Add(this.deviceRes2);
             this.splitContainer3.Panel2.Controls.Add(this.resDeviceID);
             this.splitContainer3.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.splitContainer3.Size = new System.Drawing.Size(415, 272);
+            this.splitContainer3.Size = new System.Drawing.Size(415, 311);
             this.splitContainer3.SplitterDistance = 213;
             this.splitContainer3.TabIndex = 8;
             // 
@@ -1291,6 +1053,24 @@
             this.btnDeviceSearch.UseVisualStyleBackColor = true;
             this.btnDeviceSearch.Click += new System.EventHandler(this.btnDeviceSearch_Click);
             // 
+            // resDeviceModel
+            // 
+            this.resDeviceModel.AutoSize = true;
+            this.resDeviceModel.Location = new System.Drawing.Point(132, 38);
+            this.resDeviceModel.Name = "resDeviceModel";
+            this.resDeviceModel.Size = new System.Drawing.Size(36, 13);
+            this.resDeviceModel.TabIndex = 69;
+            this.resDeviceModel.Text = "Model";
+            // 
+            // deviceRes3
+            // 
+            this.deviceRes3.AutoSize = true;
+            this.deviceRes3.Location = new System.Drawing.Point(132, 66);
+            this.deviceRes3.Name = "deviceRes3";
+            this.deviceRes3.Size = new System.Drawing.Size(54, 13);
+            this.deviceRes3.TabIndex = 68;
+            this.deviceRes3.Text = "No results";
+            // 
             // deviceSelectStatus
             // 
             this.deviceSelectStatus.AutoSize = true;
@@ -1325,7 +1105,7 @@
             this.selectDeviceSearch.Name = "selectDeviceSearch";
             this.selectDeviceSearch.Size = new System.Drawing.Size(135, 20);
             this.selectDeviceSearch.TabIndex = 16;
-            this.selectDeviceSearch.Text = "spark3";
+            this.selectDeviceSearch.Text = "spark1";
             // 
             // label56
             // 
@@ -1383,83 +1163,540 @@
             this.resDeviceID.TabIndex = 14;
             this.resDeviceID.Text = "ID";
             // 
-            // deviceManufacturer
+            // tabPatient
             // 
-            this.deviceManufacturer.AutoSize = true;
-            this.deviceManufacturer.Location = new System.Drawing.Point(79, 150);
-            this.deviceManufacturer.Name = "deviceManufacturer";
-            this.deviceManufacturer.Size = new System.Drawing.Size(10, 13);
-            this.deviceManufacturer.TabIndex = 72;
-            this.deviceManufacturer.Text = "-";
+            this.tabPatient.Controls.Add(this.splitContainer2);
+            this.tabPatient.Location = new System.Drawing.Point(4, 22);
+            this.tabPatient.Name = "tabPatient";
+            this.tabPatient.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPatient.Size = new System.Drawing.Size(421, 317);
+            this.tabPatient.TabIndex = 1;
+            this.tabPatient.Text = "Patient";
+            this.tabPatient.UseVisualStyleBackColor = true;
             // 
-            // deviceID
+            // splitContainer2
             // 
-            this.deviceID.AutoSize = true;
-            this.deviceID.Location = new System.Drawing.Point(79, 131);
-            this.deviceID.Name = "deviceID";
-            this.deviceID.Size = new System.Drawing.Size(10, 13);
-            this.deviceID.TabIndex = 71;
-            this.deviceID.Text = "-";
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.Location = new System.Drawing.Point(3, 3);
+            this.splitContainer2.Name = "splitContainer2";
             // 
-            // label58
+            // splitContainer2.Panel1
             // 
-            this.label58.AutoSize = true;
-            this.label58.Location = new System.Drawing.Point(3, 131);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(18, 13);
-            this.label58.TabIndex = 70;
-            this.label58.Text = "ID";
+            this.splitContainer2.Panel1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.splitContainer2.Panel1.Controls.Add(this.createPatientStatus);
+            this.splitContainer2.Panel1.Controls.Add(this.searchStatus);
+            this.splitContainer2.Panel1.Controls.Add(this.label7);
+            this.splitContainer2.Panel1.Controls.Add(this.label4);
+            this.splitContainer2.Panel1.Controls.Add(this.btnCreatePatient);
+            this.splitContainer2.Panel1.Controls.Add(this.givenName);
+            this.splitContainer2.Panel1.Controls.Add(this.label8);
+            this.splitContainer2.Panel1.Controls.Add(this.searchFamName);
+            this.splitContainer2.Panel1.Controls.Add(this.label5);
+            this.splitContainer2.Panel1.Controls.Add(this.label3);
+            this.splitContainer2.Panel1.Controls.Add(this.lastName);
+            this.splitContainer2.Panel1.Controls.Add(this.btnSearchPatient);
+            this.splitContainer2.Panel1.Controls.Add(this.birthDate);
+            this.splitContainer2.Panel1.Controls.Add(this.label6);
+            this.splitContainer2.Panel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.splitContainer2.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer2_Panel1_Paint);
             // 
-            // deviceManufacturerLabel
+            // splitContainer2.Panel2
             // 
-            this.deviceManufacturerLabel.AutoSize = true;
-            this.deviceManufacturerLabel.Location = new System.Drawing.Point(3, 150);
-            this.deviceManufacturerLabel.Name = "deviceManufacturerLabel";
-            this.deviceManufacturerLabel.Size = new System.Drawing.Size(70, 13);
-            this.deviceManufacturerLabel.TabIndex = 69;
-            this.deviceManufacturerLabel.Text = "Manufacturer";
+            this.splitContainer2.Panel2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.splitContainer2.Panel2.Controls.Add(this.patientSelectStatus);
+            this.splitContainer2.Panel2.Controls.Add(this.label44);
+            this.splitContainer2.Panel2.Controls.Add(this.label39);
+            this.splitContainer2.Panel2.Controls.Add(this.selectPatientSearchText);
+            this.splitContainer2.Panel2.Controls.Add(this.label40);
+            this.splitContainer2.Panel2.Controls.Add(this.label9);
+            this.splitContainer2.Panel2.Controls.Add(this.btnSelectPatient);
+            this.splitContainer2.Panel2.Controls.Add(this.label1);
+            this.splitContainer2.Panel2.Controls.Add(this.label2);
+            this.splitContainer2.Panel2.Controls.Add(this.label10);
+            this.splitContainer2.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.splitContainer2.Size = new System.Drawing.Size(415, 311);
+            this.splitContainer2.SplitterDistance = 213;
+            this.splitContainer2.TabIndex = 7;
             // 
-            // resDeviceModel
+            // createPatientStatus
             // 
-            this.resDeviceModel.AutoSize = true;
-            this.resDeviceModel.Location = new System.Drawing.Point(132, 38);
-            this.resDeviceModel.Name = "resDeviceModel";
-            this.resDeviceModel.Size = new System.Drawing.Size(36, 13);
-            this.resDeviceModel.TabIndex = 69;
-            this.resDeviceModel.Text = "Model";
+            this.createPatientStatus.AutoSize = true;
+            this.createPatientStatus.Location = new System.Drawing.Point(122, 236);
+            this.createPatientStatus.Name = "createPatientStatus";
+            this.createPatientStatus.Size = new System.Drawing.Size(45, 13);
+            this.createPatientStatus.TabIndex = 14;
+            this.createPatientStatus.Text = "Inactive";
             // 
-            // deviceRes3
+            // searchStatus
             // 
-            this.deviceRes3.AutoSize = true;
-            this.deviceRes3.Location = new System.Drawing.Point(132, 66);
-            this.deviceRes3.Name = "deviceRes3";
-            this.deviceRes3.Size = new System.Drawing.Size(54, 13);
-            this.deviceRes3.TabIndex = 68;
-            this.deviceRes3.Text = "No results";
+            this.searchStatus.AutoSize = true;
+            this.searchStatus.Location = new System.Drawing.Point(122, 81);
+            this.searchStatus.Name = "searchStatus";
+            this.searchStatus.Size = new System.Drawing.Size(45, 13);
+            this.searchStatus.TabIndex = 13;
+            this.searchStatus.Text = "Inactive";
             // 
-            // deviceModel
+            // label7
             // 
-            this.deviceModel.AutoSize = true;
-            this.deviceModel.Location = new System.Drawing.Point(79, 163);
-            this.deviceModel.Name = "deviceModel";
-            this.deviceModel.Size = new System.Drawing.Size(10, 13);
-            this.deviceModel.TabIndex = 74;
-            this.deviceModel.Text = "-";
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.label7.Location = new System.Drawing.Point(3, 128);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(104, 18);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Patient creator";
             // 
-            // deviceModelLabel
+            // label4
             // 
-            this.deviceModelLabel.AutoSize = true;
-            this.deviceModelLabel.Location = new System.Drawing.Point(3, 164);
-            this.deviceModelLabel.Name = "deviceModelLabel";
-            this.deviceModelLabel.Size = new System.Drawing.Size(36, 13);
-            this.deviceModelLabel.TabIndex = 73;
-            this.deviceModelLabel.Text = "Model";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(4, 156);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(55, 13);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "First name";
+            // 
+            // btnCreatePatient
+            // 
+            this.btnCreatePatient.Location = new System.Drawing.Point(6, 231);
+            this.btnCreatePatient.Name = "btnCreatePatient";
+            this.btnCreatePatient.Size = new System.Drawing.Size(110, 23);
+            this.btnCreatePatient.TabIndex = 3;
+            this.btnCreatePatient.Text = "Create patient";
+            this.btnCreatePatient.UseVisualStyleBackColor = true;
+            this.btnCreatePatient.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // givenName
+            // 
+            this.givenName.Location = new System.Drawing.Point(64, 153);
+            this.givenName.Name = "givenName";
+            this.givenName.Size = new System.Drawing.Size(136, 20);
+            this.givenName.TabIndex = 5;
+            this.givenName.Text = "Unintentional";
+            this.givenName.TextChanged += new System.EventHandler(this.givenName_TextChanged);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.label8.Location = new System.Drawing.Point(3, 19);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(102, 18);
+            this.label8.TabIndex = 12;
+            this.label8.Text = "Patient search";
+            // 
+            // searchFamName
+            // 
+            this.searchFamName.Location = new System.Drawing.Point(64, 50);
+            this.searchFamName.Name = "searchFamName";
+            this.searchFamName.Size = new System.Drawing.Size(135, 20);
+            this.searchFamName.TabIndex = 4;
+            this.searchFamName.Text = "Wildfhir";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(3, 182);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(56, 13);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Last name";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(4, 53);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(56, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Last name";
+            // 
+            // lastName
+            // 
+            this.lastName.Location = new System.Drawing.Point(64, 179);
+            this.lastName.Name = "lastName";
+            this.lastName.Size = new System.Drawing.Size(135, 20);
+            this.lastName.TabIndex = 7;
+            this.lastName.Text = "Wildfhir";
+            this.lastName.TextChanged += new System.EventHandler(this.lastName_TextChanged);
+            // 
+            // btnSearchPatient
+            // 
+            this.btnSearchPatient.Location = new System.Drawing.Point(6, 76);
+            this.btnSearchPatient.Name = "btnSearchPatient";
+            this.btnSearchPatient.Size = new System.Drawing.Size(110, 23);
+            this.btnSearchPatient.TabIndex = 0;
+            this.btnSearchPatient.Text = "Search patient";
+            this.btnSearchPatient.UseVisualStyleBackColor = true;
+            this.btnSearchPatient.Click += new System.EventHandler(this.btnSearchPatient_Click);
+            // 
+            // birthDate
+            // 
+            this.birthDate.CustomFormat = "yyyy-MM-dd";
+            this.birthDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.birthDate.Location = new System.Drawing.Point(64, 205);
+            this.birthDate.MaxDate = new System.DateTime(2015, 12, 31, 0, 0, 0, 0);
+            this.birthDate.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
+            this.birthDate.Name = "birthDate";
+            this.birthDate.Size = new System.Drawing.Size(135, 20);
+            this.birthDate.TabIndex = 8;
+            this.birthDate.Value = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
+            this.birthDate.ValueChanged += new System.EventHandler(this.birthDate_ValueChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(3, 211);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(52, 13);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "Birth date";
+            // 
+            // patientSelectStatus
+            // 
+            this.patientSelectStatus.AutoSize = true;
+            this.patientSelectStatus.Location = new System.Drawing.Point(122, 233);
+            this.patientSelectStatus.Name = "patientSelectStatus";
+            this.patientSelectStatus.Size = new System.Drawing.Size(45, 13);
+            this.patientSelectStatus.TabIndex = 15;
+            this.patientSelectStatus.Text = "Inactive";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(128, 38);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(34, 13);
+            this.label44.TabIndex = 67;
+            this.label44.Text = "B-day";
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.label39.Location = new System.Drawing.Point(3, 171);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(96, 18);
+            this.label39.TabIndex = 18;
+            this.label39.Text = "Patient select";
+            // 
+            // selectPatientSearchText
+            // 
+            this.selectPatientSearchText.Location = new System.Drawing.Point(27, 202);
+            this.selectPatientSearchText.Name = "selectPatientSearchText";
+            this.selectPatientSearchText.Size = new System.Drawing.Size(135, 20);
+            this.selectPatientSearchText.TabIndex = 16;
+            this.selectPatientSearchText.Text = "spark4";
+            this.selectPatientSearchText.TextChanged += new System.EventHandler(this.selectPatientSearchText_TextChanged);
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(4, 205);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(18, 13);
+            this.label40.TabIndex = 17;
+            this.label40.Text = "ID";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.label9.Location = new System.Drawing.Point(3, 19);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(101, 18);
+            this.label9.TabIndex = 13;
+            this.label9.Text = "Patient results";
+            // 
+            // btnSelectPatient
+            // 
+            this.btnSelectPatient.Location = new System.Drawing.Point(6, 228);
+            this.btnSelectPatient.Name = "btnSelectPatient";
+            this.btnSelectPatient.Size = new System.Drawing.Size(110, 23);
+            this.btnSelectPatient.TabIndex = 15;
+            this.btnSelectPatient.Text = "Select patient";
+            this.btnSelectPatient.UseVisualStyleBackColor = true;
+            this.btnSelectPatient.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 66);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(54, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "No results";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(128, 66);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(54, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "No results";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(3, 38);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(18, 13);
+            this.label10.TabIndex = 14;
+            this.label10.Text = "ID";
+            // 
+            // tabControl
+            // 
+            this.tabControl.Controls.Add(this.tabPatient);
+            this.tabControl.Controls.Add(this.tabDevice);
+            this.tabControl.Controls.Add(this.tabMeasurement);
+            this.tabControl.Controls.Add(this.tabMapping);
+            this.tabControl.Controls.Add(this.tabObs);
+            this.tabControl.Location = new System.Drawing.Point(12, 1);
+            this.tabControl.Name = "tabControl";
+            this.tabControl.SelectedIndex = 0;
+            this.tabControl.Size = new System.Drawing.Size(429, 343);
+            this.tabControl.TabIndex = 8;
+            // 
+            // tabMapping
+            // 
+            this.tabMapping.Controls.Add(this.panel2);
+            this.tabMapping.Location = new System.Drawing.Point(4, 22);
+            this.tabMapping.Name = "tabMapping";
+            this.tabMapping.Padding = new System.Windows.Forms.Padding(3);
+            this.tabMapping.Size = new System.Drawing.Size(421, 317);
+            this.tabMapping.TabIndex = 3;
+            this.tabMapping.Text = "Conversion";
+            this.tabMapping.UseVisualStyleBackColor = true;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.panel2.Controls.Add(this.conversionList);
+            this.panel2.Controls.Add(this.conversionStatus);
+            this.panel2.Controls.Add(this.label46);
+            this.panel2.Controls.Add(this.convertButton);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(415, 311);
+            this.panel2.TabIndex = 1;
+            // 
+            // conversionList
+            // 
+            this.conversionList.FormattingEnabled = true;
+            this.conversionList.Items.AddRange(new object[] {
+            "age",
+            "bmr",
+            "height",
+            "m_active_time",
+            "m_calories",
+            "m_distance",
+            "m_inactive_time",
+            "m_lcat",
+            "m_lcit",
+            "m_steps",
+            "m_total_calories",
+            "s_asleep_time",
+            "s_awake",
+            "s_awake_time",
+            "s_awakenings",
+            "s_bedtime",
+            "s_clinical_deep",
+            "s_count",
+            "s_duration",
+            "s_light",
+            "s_quality",
+            "s_rem",
+            "weight"});
+            this.conversionList.Location = new System.Drawing.Point(220, 3);
+            this.conversionList.Name = "conversionList";
+            this.conversionList.Size = new System.Drawing.Size(192, 303);
+            this.conversionList.TabIndex = 16;
+            // 
+            // conversionStatus
+            // 
+            this.conversionStatus.AutoSize = true;
+            this.conversionStatus.Location = new System.Drawing.Point(123, 290);
+            this.conversionStatus.Name = "conversionStatus";
+            this.conversionStatus.Size = new System.Drawing.Size(45, 13);
+            this.conversionStatus.TabIndex = 15;
+            this.conversionStatus.Text = "Inactive";
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.label46.Location = new System.Drawing.Point(3, 16);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(196, 18);
+            this.label46.TabIndex = 15;
+            this.label46.Text = "Convert to FHIR observation";
+            // 
+            // convertButton
+            // 
+            this.convertButton.Location = new System.Drawing.Point(3, 285);
+            this.convertButton.Name = "convertButton";
+            this.convertButton.Size = new System.Drawing.Size(114, 23);
+            this.convertButton.TabIndex = 6;
+            this.convertButton.Text = "Convert";
+            this.convertButton.UseVisualStyleBackColor = true;
+            this.convertButton.Click += new System.EventHandler(this.button1_Click_2);
+            // 
+            // tabObs
+            // 
+            this.tabObs.Controls.Add(this.splitContainer4);
+            this.tabObs.Location = new System.Drawing.Point(4, 22);
+            this.tabObs.Name = "tabObs";
+            this.tabObs.Padding = new System.Windows.Forms.Padding(3);
+            this.tabObs.Size = new System.Drawing.Size(421, 317);
+            this.tabObs.TabIndex = 4;
+            this.tabObs.Text = "Observation";
+            this.tabObs.UseVisualStyleBackColor = true;
+            // 
+            // splitContainer4
+            // 
+            this.splitContainer4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer4.Location = new System.Drawing.Point(3, 3);
+            this.splitContainer4.Name = "splitContainer4";
+            // 
+            // splitContainer4.Panel1
+            // 
+            this.splitContainer4.Panel1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.splitContainer4.Panel1.Controls.Add(this.obsSearchDate);
+            this.splitContainer4.Panel1.Controls.Add(this.obsSearchStatus);
+            this.splitContainer4.Panel1.Controls.Add(this.label59);
+            this.splitContainer4.Panel1.Controls.Add(this.label61);
+            this.splitContainer4.Panel1.Controls.Add(this.obsSearchButton);
+            this.splitContainer4.Panel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.splitContainer4.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer2_Panel1_Paint);
+            // 
+            // splitContainer4.Panel2
+            // 
+            this.splitContainer4.Panel2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.splitContainer4.Panel2.Controls.Add(this.label65);
+            this.splitContainer4.Panel2.Controls.Add(this.label68);
+            this.splitContainer4.Panel2.Controls.Add(this.obsFinderId);
+            this.splitContainer4.Panel2.Controls.Add(this.obsFinderValue);
+            this.splitContainer4.Panel2.Controls.Add(this.label71);
+            this.splitContainer4.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.splitContainer4.Size = new System.Drawing.Size(415, 311);
+            this.splitContainer4.SplitterDistance = 213;
+            this.splitContainer4.TabIndex = 9;
+            // 
+            // obsSearchStatus
+            // 
+            this.obsSearchStatus.AutoSize = true;
+            this.obsSearchStatus.Location = new System.Drawing.Point(122, 81);
+            this.obsSearchStatus.Name = "obsSearchStatus";
+            this.obsSearchStatus.Size = new System.Drawing.Size(45, 13);
+            this.obsSearchStatus.TabIndex = 13;
+            this.obsSearchStatus.Text = "Inactive";
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.label59.Location = new System.Drawing.Point(3, 19);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(137, 18);
+            this.label59.TabIndex = 12;
+            this.label59.Text = "Observation search";
+            // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.Location = new System.Drawing.Point(3, 54);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(30, 13);
+            this.label61.TabIndex = 5;
+            this.label61.Text = "Date";
+            // 
+            // obsSearchButton
+            // 
+            this.obsSearchButton.Location = new System.Drawing.Point(6, 76);
+            this.obsSearchButton.Name = "obsSearchButton";
+            this.obsSearchButton.Size = new System.Drawing.Size(110, 23);
+            this.obsSearchButton.TabIndex = 0;
+            this.obsSearchButton.Text = "Search observation";
+            this.obsSearchButton.UseVisualStyleBackColor = true;
+            this.obsSearchButton.Click += new System.EventHandler(this.obsSearchButton_Click);
+            // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.Location = new System.Drawing.Point(98, 38);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(34, 13);
+            this.label65.TabIndex = 67;
+            this.label65.Text = "Value";
+            // 
+            // label68
+            // 
+            this.label68.AutoSize = true;
+            this.label68.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.label68.Location = new System.Drawing.Point(3, 19);
+            this.label68.Name = "label68";
+            this.label68.Size = new System.Drawing.Size(136, 18);
+            this.label68.TabIndex = 13;
+            this.label68.Text = "Observation results";
+            // 
+            // obsFinderId
+            // 
+            this.obsFinderId.AutoSize = true;
+            this.obsFinderId.Location = new System.Drawing.Point(3, 66);
+            this.obsFinderId.Name = "obsFinderId";
+            this.obsFinderId.Size = new System.Drawing.Size(54, 13);
+            this.obsFinderId.TabIndex = 1;
+            this.obsFinderId.Text = "No results";
+            // 
+            // obsFinderValue
+            // 
+            this.obsFinderValue.AutoSize = true;
+            this.obsFinderValue.Location = new System.Drawing.Point(98, 66);
+            this.obsFinderValue.Name = "obsFinderValue";
+            this.obsFinderValue.Size = new System.Drawing.Size(54, 13);
+            this.obsFinderValue.TabIndex = 2;
+            this.obsFinderValue.Text = "No results";
+            // 
+            // label71
+            // 
+            this.label71.AutoSize = true;
+            this.label71.Location = new System.Drawing.Point(3, 38);
+            this.label71.Name = "label71";
+            this.label71.Size = new System.Drawing.Size(18, 13);
+            this.label71.TabIndex = 14;
+            this.label71.Text = "ID";
+            // 
+            // searchObsDate
+            // 
+            this.searchObsDate.CustomFormat = "yyyy-MM-dd";
+            this.searchObsDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.searchObsDate.Location = new System.Drawing.Point(39, 42);
+            this.searchObsDate.MaxDate = new System.DateTime(2015, 12, 31, 0, 0, 0, 0);
+            this.searchObsDate.MinDate = new System.DateTime(2015, 1, 1, 0, 0, 0, 0);
+            this.searchObsDate.Name = "searchObsDate";
+            this.searchObsDate.Size = new System.Drawing.Size(109, 20);
+            this.searchObsDate.TabIndex = 10;
+            this.searchObsDate.Value = new System.DateTime(2015, 1, 1, 0, 0, 0, 0);
+            this.searchObsDate.ValueChanged += new System.EventHandler(this.searchObsDate_ValueChanged);
+            // 
+            // obsSearchDate
+            // 
+            this.obsSearchDate.CustomFormat = "yyyy-MM-dd";
+            this.obsSearchDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.obsSearchDate.Location = new System.Drawing.Point(58, 49);
+            this.obsSearchDate.MaxDate = new System.DateTime(2015, 12, 31, 0, 0, 0, 0);
+            this.obsSearchDate.MinDate = new System.DateTime(2015, 1, 1, 0, 0, 0, 0);
+            this.obsSearchDate.Name = "obsSearchDate";
+            this.obsSearchDate.Size = new System.Drawing.Size(109, 20);
+            this.obsSearchDate.TabIndex = 15;
+            this.obsSearchDate.Value = new System.DateTime(2015, 1, 1, 0, 0, 0, 0);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1102, 581);
+            this.ClientSize = new System.Drawing.Size(904, 419);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.tabControl);
             this.Cursor = System.Windows.Forms.Cursors.Default;
@@ -1477,6 +1714,12 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabDevice.ResumeLayout(false);
+            this.splitContainer3.Panel1.ResumeLayout(false);
+            this.splitContainer3.Panel1.PerformLayout();
+            this.splitContainer3.Panel2.ResumeLayout(false);
+            this.splitContainer3.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
+            this.splitContainer3.ResumeLayout(false);
             this.tabPatient.ResumeLayout(false);
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel1.PerformLayout();
@@ -1485,12 +1728,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
             this.tabControl.ResumeLayout(false);
-            this.splitContainer3.Panel1.ResumeLayout(false);
-            this.splitContainer3.Panel1.PerformLayout();
-            this.splitContainer3.Panel2.ResumeLayout(false);
-            this.splitContainer3.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
-            this.splitContainer3.ResumeLayout(false);
+            this.tabMapping.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.tabObs.ResumeLayout(false);
+            this.splitContainer4.Panel1.ResumeLayout(false);
+            this.splitContainer4.Panel1.PerformLayout();
+            this.splitContainer4.Panel2.ResumeLayout(false);
+            this.splitContainer4.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).EndInit();
+            this.splitContainer4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1559,7 +1806,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button btnRetrieveObs;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.DateTimePicker searchObsDate;
         private System.Windows.Forms.TabPage tabDevice;
         private System.Windows.Forms.TabPage tabPatient;
         private System.Windows.Forms.SplitContainer splitContainer2;
@@ -1620,6 +1866,24 @@
         private System.Windows.Forms.Label deviceRes3;
         private System.Windows.Forms.Label deviceModel;
         private System.Windows.Forms.Label deviceModelLabel;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.ListBox conversionList;
+        private System.Windows.Forms.Label conversionStatus;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.Button convertButton;
+        private System.Windows.Forms.TabPage tabObs;
+        private System.Windows.Forms.SplitContainer splitContainer4;
+        private System.Windows.Forms.Label obsSearchStatus;
+        private System.Windows.Forms.Label label59;
+        private System.Windows.Forms.Label label61;
+        private System.Windows.Forms.Button obsSearchButton;
+        private System.Windows.Forms.Label label65;
+        private System.Windows.Forms.Label label68;
+        private System.Windows.Forms.Label obsFinderId;
+        private System.Windows.Forms.Label obsFinderValue;
+        private System.Windows.Forms.Label label71;
+        private System.Windows.Forms.DateTimePicker searchObsDate;
+        private System.Windows.Forms.DateTimePicker obsSearchDate;
     }
 }
 

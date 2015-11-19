@@ -1,8 +1,5 @@
 c:\users\ben\documents\visual studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
-c:\users\ben\documents\visual studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\Hl7.Fhir.Core.dll
 c:\users\ben\documents\visual studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\Newtonsoft.Json.dll
-c:\users\ben\documents\visual studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\Hl7.Fhir.Core.pdb
-c:\users\ben\documents\visual studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\Hl7.Fhir.Core.xml
 c:\users\ben\documents\visual studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Ben\Documents\Visual Studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\System.Net.Http.Formatting.dll
 C:\Users\Ben\Documents\Visual Studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\System.Net.Http.Formatting.xml
@@ -18,3 +15,6 @@ C:\Users\Ben\Documents\Visual Studio 2012\Projects\WindowsFormsApplication1\Wind
 C:\Users\Ben\Documents\Visual Studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\Jawbone to FHIR mapper.application
 C:\Users\Ben\Documents\Visual Studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\Jawbone to FHIR mapper.exe
 C:\Users\Ben\Documents\Visual Studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\Jawbone to FHIR mapper.pdb
+C:\Users\Ben\Documents\Visual Studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\Hl7.Fhir.DSTU2.Core.dll
+C:\Users\Ben\Documents\Visual Studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\Hl7.Fhir.DSTU2.Core.pdb
+C:\Users\Ben\Documents\Visual Studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\Hl7.Fhir.DSTU2.Core.xml

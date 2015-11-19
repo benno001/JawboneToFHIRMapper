@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Hl7.Fhir.DSTU2</id>
+    <version>0.90.2</version>
+    <title>HL7 FHIR Core support API for DSTU2</title>
+    <authors>Ewout Kramer (e.kramer@furore.com) and contributors</authors>
+    <owners>Ewout Kramer (e.kramer@furore.com) and contributors</owners>
+    <projectUrl>https://github.com/ewoutkramer/fhir-net-api</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/ewoutkramer/fhir-net-api/master/icon-fhir-32.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Core .NET support for working with HL7 FHIR. Supports FHIR DSTU2 (1.0).</description>
+    <summary>This is the core support library for HL7's FHIR standard (http://hl7.org/fhir).
+	It contains the core functionality to working with RESTful FHIR servers: POCO classes for FHIR, 
+	parsing/serialization of FHIR data and a FhirClient for easy access to FHIR servers.</summary>
+    <releaseNotes>DSTU2 release. See http://ewoutkramer.github.io/fhir-net-api/whats-new.html</releaseNotes>
+    <copyright>Copyright 2015</copyright>
+    <language>en-us</language>
+    <tags>HL7 FHIR REST parse serialize class model</tags>
+    <dependencies>
+      <dependency id="Newtonsoft.Json" version="6.0.7" />
+    </dependencies>
+  </metadata>
+</package>

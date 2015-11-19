@@ -43,26 +43,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Hl7.Fhir.Core.dll" size="1508352">
-      <assemblyIdentity name="Hl7.Fhir.Core" version="0.50.1.30062" publicKeyToken="D706911480550FC3" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Hl7.Fhir.DSTU2.Core.dll" size="1582080">
+      <assemblyIdentity name="Hl7.Fhir.DSTU2.Core" version="0.90.2.33399" publicKeyToken="D706911480550FC3" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>cPmWF5qf+c1GKMbs6JG9i9K2zBFu6NwGk5pzSg1xyxc=</dsig:DigestValue>
+        <dsig:DigestValue>jiNkDxKphcE2YHzQZ/ObfPv7Rno7BK4xif8lUVjKpW0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Jawbone to FHIR mapper.exe" size="288256">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Jawbone to FHIR mapper.exe" size="295936">
       <assemblyIdentity name="Jawbone to FHIR mapper" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>rsprsvzLZTI7vTHQycatUhzwmf7ZilkbOr64LDBEoX4=</dsig:DigestValue>
+        <dsig:DigestValue>6fM/3l+qZ3zawhL9teWc8ABl/W/DYzgxMeWWCJ5JiQQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
