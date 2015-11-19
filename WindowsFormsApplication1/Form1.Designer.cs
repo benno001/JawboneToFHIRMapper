@@ -97,6 +97,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.btnRetrieveObs = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
+            this.searchObsDate = new System.Windows.Forms.DateTimePicker();
             this.tabDevice = new System.Windows.Forms.TabPage();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.createDeviceStatus = new System.Windows.Forms.Label();
@@ -167,8 +168,7 @@
             this.obsFinderId = new System.Windows.Forms.Label();
             this.obsFinderValue = new System.Windows.Forms.Label();
             this.label71 = new System.Windows.Forms.Label();
-            this.searchObsDate = new System.Windows.Forms.DateTimePicker();
-            this.obsSearchDate = new System.Windows.Forms.DateTimePicker();
+            this.obsSearchPatient = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -889,6 +889,19 @@
             this.label12.TabIndex = 11;
             this.label12.Text = "Date";
             // 
+            // searchObsDate
+            // 
+            this.searchObsDate.CustomFormat = "yyyy-MM-dd";
+            this.searchObsDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.searchObsDate.Location = new System.Drawing.Point(39, 42);
+            this.searchObsDate.MaxDate = new System.DateTime(2015, 12, 31, 0, 0, 0, 0);
+            this.searchObsDate.MinDate = new System.DateTime(2015, 1, 1, 0, 0, 0, 0);
+            this.searchObsDate.Name = "searchObsDate";
+            this.searchObsDate.Size = new System.Drawing.Size(109, 20);
+            this.searchObsDate.TabIndex = 10;
+            this.searchObsDate.Value = new System.DateTime(2015, 1, 1, 0, 0, 0, 0);
+            this.searchObsDate.ValueChanged += new System.EventHandler(this.searchObsDate_ValueChanged);
+            // 
             // tabDevice
             // 
             this.tabDevice.Controls.Add(this.splitContainer3);
@@ -1562,7 +1575,7 @@
             // splitContainer4.Panel1
             // 
             this.splitContainer4.Panel1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.splitContainer4.Panel1.Controls.Add(this.obsSearchDate);
+            this.splitContainer4.Panel1.Controls.Add(this.obsSearchPatient);
             this.splitContainer4.Panel1.Controls.Add(this.obsSearchStatus);
             this.splitContainer4.Panel1.Controls.Add(this.label59);
             this.splitContainer4.Panel1.Controls.Add(this.label61);
@@ -1607,9 +1620,9 @@
             this.label61.AutoSize = true;
             this.label61.Location = new System.Drawing.Point(3, 54);
             this.label61.Name = "label61";
-            this.label61.Size = new System.Drawing.Size(30, 13);
+            this.label61.Size = new System.Drawing.Size(54, 13);
             this.label61.TabIndex = 5;
-            this.label61.Text = "Date";
+            this.label61.Text = "Patient ID";
             // 
             // obsSearchButton
             // 
@@ -1617,7 +1630,7 @@
             this.obsSearchButton.Name = "obsSearchButton";
             this.obsSearchButton.Size = new System.Drawing.Size(110, 23);
             this.obsSearchButton.TabIndex = 0;
-            this.obsSearchButton.Text = "Search observation";
+            this.obsSearchButton.Text = "Search patient";
             this.obsSearchButton.UseVisualStyleBackColor = true;
             this.obsSearchButton.Click += new System.EventHandler(this.obsSearchButton_Click);
             // 
@@ -1663,34 +1676,17 @@
             this.label71.AutoSize = true;
             this.label71.Location = new System.Drawing.Point(3, 38);
             this.label71.Name = "label71";
-            this.label71.Size = new System.Drawing.Size(18, 13);
+            this.label71.Size = new System.Drawing.Size(35, 13);
             this.label71.TabIndex = 14;
-            this.label71.Text = "ID";
+            this.label71.Text = "Name";
             // 
-            // searchObsDate
+            // obsSearchPatient
             // 
-            this.searchObsDate.CustomFormat = "yyyy-MM-dd";
-            this.searchObsDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.searchObsDate.Location = new System.Drawing.Point(39, 42);
-            this.searchObsDate.MaxDate = new System.DateTime(2015, 12, 31, 0, 0, 0, 0);
-            this.searchObsDate.MinDate = new System.DateTime(2015, 1, 1, 0, 0, 0, 0);
-            this.searchObsDate.Name = "searchObsDate";
-            this.searchObsDate.Size = new System.Drawing.Size(109, 20);
-            this.searchObsDate.TabIndex = 10;
-            this.searchObsDate.Value = new System.DateTime(2015, 1, 1, 0, 0, 0, 0);
-            this.searchObsDate.ValueChanged += new System.EventHandler(this.searchObsDate_ValueChanged);
-            // 
-            // obsSearchDate
-            // 
-            this.obsSearchDate.CustomFormat = "yyyy-MM-dd";
-            this.obsSearchDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.obsSearchDate.Location = new System.Drawing.Point(58, 49);
-            this.obsSearchDate.MaxDate = new System.DateTime(2015, 12, 31, 0, 0, 0, 0);
-            this.obsSearchDate.MinDate = new System.DateTime(2015, 1, 1, 0, 0, 0, 0);
-            this.obsSearchDate.Name = "obsSearchDate";
-            this.obsSearchDate.Size = new System.Drawing.Size(109, 20);
-            this.obsSearchDate.TabIndex = 15;
-            this.obsSearchDate.Value = new System.DateTime(2015, 1, 1, 0, 0, 0, 0);
+            this.obsSearchPatient.Location = new System.Drawing.Point(67, 51);
+            this.obsSearchPatient.Name = "obsSearchPatient";
+            this.obsSearchPatient.Size = new System.Drawing.Size(100, 20);
+            this.obsSearchPatient.TabIndex = 14;
+            this.obsSearchPatient.Text = "spark4";
             // 
             // Form1
             // 
@@ -1883,7 +1879,7 @@
         private System.Windows.Forms.Label obsFinderValue;
         private System.Windows.Forms.Label label71;
         private System.Windows.Forms.DateTimePicker searchObsDate;
-        private System.Windows.Forms.DateTimePicker obsSearchDate;
+        private System.Windows.Forms.TextBox obsSearchPatient;
     }
 }
 

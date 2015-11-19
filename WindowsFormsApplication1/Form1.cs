@@ -352,18 +352,21 @@ namespace WindowsFormsApplication1
             Console.WriteLine("Value data: " + val.Data);
 
             ResourceReference dev = new ResourceReference();
-            dev.Reference = CurrentDevice.ToString();
+            dev.Reference = "Device/" + CurrentDevice.Id;
 
             ResourceReference pat = new ResourceReference();
-            pat.Reference = CurrentPatient.ToString();
+            pat.Reference = "Patient/" + CurrentPatient.Id;
 
             Console.WriteLine("Patient reference: " + pat.Reference);
 
             Console.WriteLine("Conversion: " + conversionList.Text);
 
+            CodeableConcept naam = new CodeableConcept();
+            naam.Text = conversionList.Text;
+
             DateTime date = DateTime.ParseExact(CurrentMeasurement.date, "yyyymmdd", null);
             Console.WriteLine("" + date.ToString());
-            var obs = new Observation() {Device = dev, Subject = pat, Value = val, Issued = date,  Category = concept, Status = Observation.ObservationStatus.Final};
+            var obs = new Observation() {Device = dev, Subject = pat, Value = val, Issued = date, Code = naam,  Category = concept, Status = Observation.ObservationStatus.Final};
             client.Create(obs);
 
             conversionStatus.Text = "Done!";
@@ -376,7 +379,7 @@ namespace WindowsFormsApplication1
             var endpoint = new Uri("http://spark-dstu2.furore.com/fhir");
             var client = new FhirClient(endpoint);
 
-            var query = new string[] { "issued=" + obsSearchDate.Text };
+            var query = new string[] { "subject=Patient/" + obsSearchPatient.Text };
             Bundle result = client.Search<Observation>(query);
 
             obsSearchStatus.Text = "Got " + result.Entry.Count() + " records!";
@@ -387,9 +390,12 @@ namespace WindowsFormsApplication1
             foreach (var entry in result.Entry)
             {
                 Observation obs = (Observation)entry.Resource;
-
-                obsFinderId.Text = obsFinderId.Text + obs.Id + "\r\n";
-                obsFinderValue.Text = obsFinderValue.Text + obs.Value.ToString() + "\r\n";
+                String name = "Unknown";
+                if (obs.Code != null) {
+                    name = obs.Code.Text;
+                }
+                obsFinderId.Text = obsFinderId.Text + name + "\r\n";
+                obsFinderValue.Text = obsFinderValue.Text + ((SampledData) obs.Value).Data.ToString() + "\r\n";
             }
         }
 
