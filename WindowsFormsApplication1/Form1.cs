@@ -74,9 +74,9 @@ namespace WindowsFormsApplication1
             pat.Name.Add(HumanName.ForFamily(lastName.Text).WithGiven(givenName.Text));
 
             // Upload to server
+            client.ReturnFullResource = true;
             client.Create(pat);
             createPatientStatus.Text = "Created!";
-
         }
 
         // When button 1 is clicked, select patient
@@ -323,7 +323,7 @@ namespace WindowsFormsApplication1
             {
                 val.Data = CurrentMeasurement.height.ToString();
                 Coding code = new Coding();
-                code.Code = "60621009";
+                code.Code = "60621009"; //SNOMED CT code
                 concept.Coding.Add(code);
             }
             else if (conversionList.Text.Equals("m_active_time")) val.Data = CurrentMeasurement.m_active_time.ToString();
