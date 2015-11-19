@@ -36,7 +36,7 @@ namespace WindowsFormsApplication1
             searchStatus.Text = "Searching...";
             
             // Set FHIR endpoint and create client
-            var endpoint = new Uri("http://spark-dstu2.furore.com/fhir");
+            var endpoint = new Uri("http://fhirtest.uhn.ca/baseDstu2");
             var client = new FhirClient(endpoint);
 
             // Search endpoint with a family name, input from searchFamName
@@ -66,7 +66,7 @@ namespace WindowsFormsApplication1
             createPatientStatus.Text = "Creating...";
 
             // Set FHIR endpoint and create client
-            var endpoint = new Uri("http://spark-dstu2.furore.com/fhir");
+            var endpoint = new Uri("http://fhirtest.uhn.ca/baseDstu2");
             var client = new FhirClient(endpoint);
 
             // Create new patient birthdate and name
@@ -74,7 +74,7 @@ namespace WindowsFormsApplication1
             pat.Name.Add(HumanName.ForFamily(lastName.Text).WithGiven(givenName.Text));
 
             // Upload to server
-            client.ReturnFullResource = true;
+            //client.ReturnFullResource = true;
             client.Create(pat);
             createPatientStatus.Text = "Created!";
         }
@@ -86,7 +86,7 @@ namespace WindowsFormsApplication1
             patientSelectStatus.Text = "Selecting...";
 
             // Set FHIR endpoint and create client
-            var endpoint = new Uri("http://spark-dstu2.furore.com/fhir");
+            var endpoint = new Uri("http://fhirtest.uhn.ca/baseDstu2");
             var client = new FhirClient(endpoint);
 
             // Search patient based on ID from user input
@@ -241,7 +241,7 @@ namespace WindowsFormsApplication1
         private void btnDeviceSelect_Click(object sender, EventArgs e)
         {
             deviceSelectStatus.Text = "Selecting...";
-            var endpoint = new Uri("http://spark-dstu2.furore.com/fhir");
+            var endpoint = new Uri("http://fhirtest.uhn.ca/baseDstu2");
             var client = new FhirClient(endpoint);
 
             var query = new string[] { "_id=" + selectDeviceSearch.Text.Trim() };
@@ -260,7 +260,7 @@ namespace WindowsFormsApplication1
         {
             createDeviceStatus.Text = "Creating...";
 
-            var endpoint = new Uri("http://spark-dstu2.furore.com/fhir");
+            var endpoint = new Uri("http://fhirtest.uhn.ca/baseDstu2");
             var client = new FhirClient(endpoint);
 
             var dev = new Device() { Manufacturer = createDeviceManufacturer.Text, Model =  createDeviceModel.Text};
@@ -274,7 +274,7 @@ namespace WindowsFormsApplication1
         {
             searchDeviceStatus.Text = "Searching...";
 
-            var endpoint = new Uri("http://spark-dstu2.furore.com/fhir");
+            var endpoint = new Uri("http://fhirtest.uhn.ca/baseDstu2");
             var client = new FhirClient(endpoint);
 
             var query = new string[] { "manufacturer=" + searchDeviceText.Text.Trim() };
@@ -297,7 +297,7 @@ namespace WindowsFormsApplication1
 
         private void button1_Click_2(object sender, EventArgs e)
         {
-            var endpoint = new Uri("http://spark-dstu2.furore.com/fhir");
+            var endpoint = new Uri("http://fhirtest.uhn.ca/baseDstu2");
             var client = new FhirClient(endpoint);
 
             // Create new value for observation
@@ -376,7 +376,7 @@ namespace WindowsFormsApplication1
         {
             obsSearchStatus.Text = "Searching...";
 
-            var endpoint = new Uri("http://spark-dstu2.furore.com/fhir");
+            var endpoint = new Uri("http://fhirtest.uhn.ca/baseDstu2");
             var client = new FhirClient(endpoint);
 
             var query = new string[] { "subject=Patient/" + obsSearchPatient.Text };
@@ -394,8 +394,17 @@ namespace WindowsFormsApplication1
                 if (obs.Code != null) {
                     name = obs.Code.Text;
                 }
-                obsFinderId.Text = obsFinderId.Text + name + "\r\n";
-                obsFinderValue.Text = obsFinderValue.Text + ((SampledData) obs.Value).Data.ToString() + "\r\n";
+                
+                if (obs.Value is SampledData)
+                {
+                    obsFinderId.Text = obsFinderId.Text + name + "\r\n";
+                    obsFinderValue.Text = obsFinderValue.Text + ((SampledData)obs.Value).Data.ToString() + "\r\n";
+                }
+                else if (obs.Value is Quantity)
+                {
+                    obsFinderId.Text = obsFinderId.Text + obs.Code.Coding[0] + "\r\n";
+                    obsFinderValue.Text = obsFinderValue.Text + ((Quantity)obs.Value).Value.ToString() + "\r\n";
+                }
             }
         }
 

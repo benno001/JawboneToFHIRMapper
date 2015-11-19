@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Hl7.Fhir.DSTU2.Core.dll" size="1582080">
-      <assemblyIdentity name="Hl7.Fhir.DSTU2.Core" version="0.90.2.33399" publicKeyToken="D706911480550FC3" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Hl7.Fhir.DSTU2.Core.dll" size="1582592">
+      <assemblyIdentity name="Hl7.Fhir.DSTU2.Core" version="0.90.3.24355" publicKeyToken="D706911480550FC3" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>jiNkDxKphcE2YHzQZ/ObfPv7Rno7BK4xif8lUVjKpW0=</dsig:DigestValue>
+        <dsig:DigestValue>+eqRUztzRmvNKrEPVC50Dd5gOwsSUQqOqzAu9tOPhyo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -62,7 +62,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Bx4Ri4lFMgq0IhG1qQ7Irz2rkCuI9MhSqMFZMpIdJBM=</dsig:DigestValue>
+        <dsig:DigestValue>NRUJ0nc5J6FlOk17+sk/1wpEkQ6nz2Ri0YKxiOexcWk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

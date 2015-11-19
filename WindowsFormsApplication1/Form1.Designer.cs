@@ -1118,7 +1118,7 @@
             this.selectDeviceSearch.Name = "selectDeviceSearch";
             this.selectDeviceSearch.Size = new System.Drawing.Size(135, 20);
             this.selectDeviceSearch.TabIndex = 16;
-            this.selectDeviceSearch.Text = "spark1";
+            this.selectDeviceSearch.Text = "1586956";
             // 
             // label56
             // 
@@ -1398,7 +1398,7 @@
             this.selectPatientSearchText.Name = "selectPatientSearchText";
             this.selectPatientSearchText.Size = new System.Drawing.Size(135, 20);
             this.selectPatientSearchText.TabIndex = 16;
-            this.selectPatientSearchText.Text = "spark4";
+            this.selectPatientSearchText.Text = "1586888";
             this.selectPatientSearchText.TextChanged += new System.EventHandler(this.selectPatientSearchText_TextChanged);
             // 
             // label40
@@ -1686,7 +1686,7 @@
             this.obsSearchPatient.Name = "obsSearchPatient";
             this.obsSearchPatient.Size = new System.Drawing.Size(100, 20);
             this.obsSearchPatient.TabIndex = 14;
-            this.obsSearchPatient.Text = "spark4";
+            this.obsSearchPatient.Text = "1586888";
             // 
             // Form1
             // 
